@@ -8,10 +8,9 @@ exports.run = async (bot, message, args) => {
   
 
  message.client.channels.get('712068971922456696').send(` ${message.author} adlı kişi <a:biciku:714486266347126898> ${nesne} linki ile uptime etti`)
-if (message.client.users.get('713678882011742230').send(` ${message.author} adlı kişi <a:alarm:714486253113966593> \`${nesne}\` linki ile uptime etti`))
-if (message.client.users.get('640250146453454848').send(` ${message.author} adlı kişi<a:alarm:714486253113966593> \`${nesne}\` linki ile uptime etti `)){
- 
-} else return
+
+
+
   
 }
 exports.conf = {
