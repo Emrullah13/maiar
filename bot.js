@@ -247,9 +247,11 @@ client.on("message", async message => {
           message.channel.send(`\`\`\`js\n${err}\n\`\`\``);
       }
   })
-  
-
-
+ setInterval(() => {
+  client.channels.get("756491272411283486").send('<a:yukleniyor:714500746015408128> Projeler Güncelleniyor...')
+  client.channels.get("756491272411283486").send('------------------------------------')
+  client.channels.get("756491272411283486").send('<a:tik1:714486236697329764> Tüm Projeler güncellendi')
+}, 60000) //1 Dakikaya Esittir
 
 
 
