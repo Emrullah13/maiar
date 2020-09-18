@@ -1,24 +1,42 @@
-const Discord = require('discord.js')
+const Discord = require('discord.js');
 const client = new Discord.Client();
-exports.run = async (bot, message, args) => {
+const { stripIndents } = require('common-tags');
+//var ayarlar = require('../ayarlar.json');
 
-  let user = client.users.get(args.slice(0).join(' '));
-  let nesne = args[0]
+exports.run = async (client, message) => {
+  
+  const db = require('quick.db');
   
 
- message.client.channels.get('712068971922456696').send(` ${message.author} adlı kişi  ${nesne} linki ile uptime etti`)
-
   
-}
+  let args = message.content.split(' ').slice(1);
+  const hata = args.slice(0).join(' ');
+  
+
+    var hataHook = new Discord.WebhookClient("756529787522252800", "CGAhYRswFazewVwSVjiDz1fh7pp-6WjbjhuasoH7kOjuPTK148LfYMFmFU9--1Ax2VOd")
+          // https://discord.com/api/webhooks/756529787522252800/CGAhYRswFazewVwSVjiDz1fh7pp-6WjbjhuasoH7kOjuPTK148LfYMFmFU9--1Ax2VOd
+    var embed = new Discord.RichEmbed()
+    .setColor("0x36393F")
+    .setTitle(`<a:alarm:714486253113966593> UPTİME LOG <a:alarm:714486253113966593>`)
+    .addField(`<a:ok:712014850640838716> Kullanıcı`, message.author.tag)
+    .addField(`<a:ok:712014850640838716> Eklenen Link`, hata)
+    hataHook.send(embed)
+
+};
+
 exports.conf = {
   enabled: true,
   guildOnly: false,
   aliases: ['ekle'],
-    kategori: 'yapımcı',
-  permLevel: 0
+  permLevel: 0,
+    kategori: "bot",
+
 };
+
 exports.help = {
   name: 'ekle',
-  description: 'Gold üye ekler',
-  usage: 'gold-üye-ekle'
+  category: "iletisim",
+  description: 'Bottaki bir hatayı bildirmenizi sağlar.',
+  usage: 'hata-bildir <bulduğunuz hata>',
+ 
 };
