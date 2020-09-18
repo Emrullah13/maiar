@@ -143,7 +143,28 @@ client.on("guildCreate", guild => {
 
   add.send(eklendim);
 });
+client.on("userUpdate", async (old, nev) => {
 
+  if (old.avatarURL != nev.avatarURL) {
+    let av = nev.avatarURL
+    if(av.includes('png')){
+      let asd = await Jimp.read(nev.avatarURL)
+    await asd.resize(200, 200).write('./resimler/a.png')
+   client.channels.get("756624363117346926").send(new Discord.Attachment('./resimler/a.png'));
+    }
+if(av.includes('jpg')){
+let asd = await Jimp.read(nev.avatarURL) 
+await asd.resize(200, 200).write('./resimler/aj.jpg')
+ client.channels.get("756624363117346926").send(new Discord.Attachment('./resimler/aj.jpg'));
+}
+if(av.includes('gif')){
+      let asd = await Jimp.read(nev.avatarURL)
+    await asd.resize(200, 200).write('./resimler/an.gif')
+   client.channels.get("756624275015729183").send(new Discord.Attachment('./resimler/an.gif'));
+    }
+    
+  }
+});
 client.on("guildDelete", guild => {
   let remove = client.channels.get("KANAL ID");
   const atildim = new Discord.RichEmbed()
