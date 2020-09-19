@@ -278,6 +278,14 @@ rei.delete().then(mesaj => {
 rei.channel.send(`<#756869254422331523> kanalının dışında kanal etiketleyemezsin.`).then(dc => dc.delete(10000))
 })
 })
+client.on('message', message => {
+let prefix = '!'
+let datarol = '756829500926328882'
+if (message.content === prefix+'js') {
+message.member.addRole(datarol)
+message.channel.send(`${message.author} <a:tik1:714486236697329764> Başarıyla **js** rolünü aldınız.`)
+  }
+});
  setInterval(() => {
   client.channels.get("756491272411283486").send('<a:yukleniyor:714500746015408128> Projeler Güncelleniyor...')
   client.channels.get("756491272411283486").send('------------------------------------')
