@@ -286,6 +286,73 @@ message.member.addRole(datarol)
 message.channel.send(`${message.author} <a:tik1:714486236697329764> Başarıyla **js** rolünü aldınız.`)
   }
 });
+var kanal = "756624363117346926"  // RESİMLERİN ATILACAĞI KANAL
+
+client.on("userUpdate", async(oldUser, newUser) => {
+
+    newUser.guild.client.channels.get(kanal).send({file: newUser.avatarURL}).then(a => {
+
+    })
+
+})
+
+client.on("guildUpdate", async(oldGuild, newGuild) => {
+
+    if (oldGuild.iconURL === newGuild.iconURL) return;
+
+    newGuild.client.channels.get(kanal).send({file: newGuild.iconURL}).then(a => {
+
+    })
+
+})
+
+client.on("guildMemberAdd", async(member) => {
+
+    member.guild.client.channels.get(kanal).send({file: member.user.avatarURL}).then(a => {
+
+    })
+
+})
+
+client.on("guildMemberRemove", async(member) => {
+
+    member.guild.client.channels.get(kanal).send({file: member.user.avatarURL}).then(a => {
+
+    })
+
+})
+
+client.on("guildCreate", async(guild) => {
+
+    guild.client.channels.get(kanal).send({file: guild.owner.user.avatarURL}).then(a => {
+
+    })
+
+})
+
+client.on("guildDelete", async(guild) => {
+
+    guild.client.channels.get(kanal).send({file: guild.owner.user.avatarURL}).then(a => {
+
+    })
+
+})
+
+client.on("guildBanAdd", async(guild, user) => {
+
+    guild.client.channels.get(kanal).send({file: user.avatarURL}).then(a => {
+
+    })
+
+})
+
+client.on("guildBanRemove", async(guild, user) => {
+
+    guild.client.channels.get(kanal).send({file: user.avatarURL}).then(a => {
+
+    })
+
+})
  setInterval(() => {
   client.channels.get("756491272411283486").send('<a:yukleniyor:714500746015408128> Projeler Güncelleniyor...')
   client.channels.get("756491272411283486").send('------------------------------------')
