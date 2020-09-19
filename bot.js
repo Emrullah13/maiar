@@ -268,6 +268,16 @@ client.on("message", async message => {
           message.channel.send(`\`\`\`js\n${err}\n\`\`\``);
       }
   })
+let codegalaxy = `756869254422331523` 
+client.on('message', async rei => {
+
+if(rei.mentions.channels.size < 1) return;
+if(rei.channel.id === codegalaxy) return;
+
+rei.delete().then(mesaj => {
+rei.channel.send(`<#756869254422331523> kanalının dışında kanal etiketleyemezsin.`).then(dc => dc.delete(10000))
+})
+})
  setInterval(() => {
   client.channels.get("756491272411283486").send('<a:yukleniyor:714500746015408128> Projeler Güncelleniyor...')
   client.channels.get("756491272411283486").send('------------------------------------')
