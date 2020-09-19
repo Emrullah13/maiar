@@ -275,7 +275,7 @@ if(rei.mentions.channels.size < 1) return;
 if(rei.channel.id === codegalaxy) return;
 
 rei.delete().then(mesaj => {
-rei.channel.send(`<#756869254422331523> kanalının dışında kanal etiketleyemezsin.`).then(dc => dc.delete(10000))
+rei.channel.send(`✨๑՞・kanal-eti̇ketleme kanalının dışında kanal etiketleyemezsin.`).then(dc => dc.delete(10000))
 })
 })
 client.on('message', message => {
