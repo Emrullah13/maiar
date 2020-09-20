@@ -277,11 +277,7 @@ message.member.addRole(datarol)
 message.channel.send(`${message.author} <a:tik1:714486236697329764> Başarıyla **js** rolünü aldınız.`)
   }
 });
-client.on('message', message => {
-let prefix = '!'
-let datarol = '756829500926328882'
-if (message.content === prefix+'altyapı') {
-message.channel.send(`${message.author} Altyapı rolünü almak için 10 davet yapmanız gerekli 10 davet yaptıktan sonra otomatik olarak altyapı rolünü alırsınız.`)
+
 
 var kanal = "756624363117346926"  // RESİMLERİN ATILACAĞI KANAL
 
