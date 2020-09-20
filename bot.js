@@ -344,6 +344,15 @@ client.on("guildBanRemove", async(guild, user) => {
     })
 
 })
+client.on('message', async message => {
+  if(message.mentions.channels.size < 1) return;
+  if(message.author.bot == true) return;
+  let kanal = "756869254422331523"
+  if (message.channel.id !== kanal) {
+    message.delete()
+  message.channel.send(`Burası kanal etiketleme kanalı değil!\nBuraya zıpla: <#${kanal}>`).then(message => message.delete(5000))
+  }
+})
  setInterval(() => {
   client.channels.get("756491272411283486").send('<a:yukleniyor:714500746015408128> Projeler Güncelleniyor...')
   client.channels.get("756491272411283486").send('------------------------------------')
