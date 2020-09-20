@@ -268,16 +268,7 @@ client.on("message", async message => {
           message.channel.send(`\`\`\`js\n${err}\n\`\`\``);
       }
   })
-let codegalaxy = `756869254422331523` 
-client.on('message', async rei => {
 
-if(rei.mentions.channels.size < 1) return;
-if(rei.channel.id === codegalaxy) return;
-
-rei.delete().then(mesaj => {
-rei.channel.send(`✨๑՞・kanal-eti̇ketleme kanalının dışında kanal etiketleyemezsin.`).then(dc => dc.delete(10000))
-})
-})
 client.on('message', message => {
 let prefix = '!'
 let datarol = '756829500926328882'
